@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Place information between Codes
+E.G <Example> I am an example </Example>
+-->
+
+<!-- Section for configuring Site information -->
+<Variables>
+	<Details>
+		<RegionCode> </RegionCode>
+		<RegionName> </RegionName>
+		<DistrictCode>  </DistrictCode>
+		<DistrictName> </DistrictName>
+		<SchoolCode> </SchoolCode>
+		<SchoolName> </SchoolName>
+	</Details>
+
+	<!-- Create a Server entry for each server on site. -->
+	<Servers>
+		<Server> </Server>
+	</Servers>
+
+	<!-- Place drive mappings here -->
+	<Mappings>
+		<!-- Drive Mappings for everyone -->
+		<Drive>
+			<Path> </Path>
+			<Letter>  </Letter>
+			<Group> </Group>
+		</Drive>
+		<Drive>
+			<Path> </Path>
+			<Letter> </Letter>
+			<Group> </Group>
+		</Drive>
+	</Mappings>
+
+<!-- If you have a papercut server put it's address here. -->
+	<Papercut>
+		<Address> </Address>
+	</Papercut>
+</Variables>
+

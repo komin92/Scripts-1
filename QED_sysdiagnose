@@ -1,0 +1,32 @@
+#!/bin/bash
+if [ $EUID != 0 ]; then
+    sudo "$0" "$@"
+    exit $?
+fi
+Echo MacOS System Diagnosis Script
+Echo 'Written By Mitchell Beare'
+Echo 'Please direct bugs and feedback to mbear0@eq.edu.au'
+Echo '------------------------------'
+Echo ' '
+
+Echo Configuring logging
+defaults write -g ACULogLevel ALL
+Echo 'Done'
+Echo '------------------------------'
+Echo ' '
+Echo 'The script will now open Quicktime Player'
+Echo 'In QuickTime Navigate to File Then New Screen Recording'
+Echo 'Begin a recording then reproduce your error Save the file to the desktop.'
+Echo 'Once you are done return to this script'
+osascript <<EOF
+	tell application "QuickTime Player" to quit
+	delay 0.3
+	tell application "QuickTime Player" to activate
+EOF
+read -n 1 -s -r -p 'Press any key to continue:'
+Echo ' '
+Echo '------------------------------'
+Echo ' '
+sysdiagnose -n -f ~/Desktop/
+Echo A folder starting with sysdiagnose has appeared on the desktop
+Echo Please Copy your screen capture from earlier into this folder.
